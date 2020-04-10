@@ -44,7 +44,7 @@
     "save": "^2.4.0",
     "save-dev": "0.0.1-security"
   },
-  "proxy": "http://localhost:80",
+  "proxy": "http://localhost:3005",
   "keywords": [],
   "author": "",
   "license": "ISC",

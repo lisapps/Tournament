@@ -15,45 +15,83 @@
 //-  * Section
 // - - - - - - - - - -
 body {
-	// font-family: "FuturaPTMedium";
-	// line-height: 1;
-	// color: $greyish_brown;
-	// font-weight: 300;
-	// letter-spacing: 0.5px;
-	// font-size: 12px;
-	// background-color: #f9fafc;
+  font-family: "FuturaPTMedium";
+  line-height: 1;
+  color: $greyish_brown;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+  background-color: #f9fafc;
 }
 
 section {
-	// ..
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  .e-section__title {
+    @include menu_active_text;
+    margin: 6px 0 20px;
+    line-height: 36px;
+    &--alerts {
+      margin-bottom: 0px;
+    }
+  }
 }
 
 .l-wrapper {
-	// display: flex;
-	// flex-flow: row;
+  display: flex;
+  flex-flow: row;
 }
 
 .l-main {
-	// width: 83vw;
+  width: 83vw;
 }
 
 .l-content {
-	// ..for block content
+  // ..for block content
+  padding: 18px 1rem 1.5rem;
+  max-width: 72em; //864px
+  flex-wrap: wrap;
+  //width: 82vw;
+  height: min-content;
 
+  &__row {
+    display: flex;
+
+    &--even {
+      justify-content: space-evenly;
+    }
+
+    &.e-last_tab_btn {
+      justify-content: flex-end;
+      padding-top: 34px;
+      padding-right: 17px;
+    }
+
+    &--border {
+      border-bottom: 1px solid #d8d8d8;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
 }
 
 .l-flexContainer {
-	display: flex;
+  display: flex;
 
-	&__row {
-		flex-flow: row;
-	}
+  &__row {
+    flex-flow: row;
+  }
 
-	&__column {
-		flex-flow: column;
-	}
+  &__column {
+    flex-flow: column;
+  }
 
-	&--wrap {
-		flex-wrap: wrap;
-	}
+  &--wrap {
+    flex-wrap: wrap;
+  }
 }

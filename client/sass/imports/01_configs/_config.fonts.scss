@@ -11,27 +11,139 @@
 .      
 */
 
-// -- Example
-// @font-face {
-//     font-family: 'FuturaPTBold';
-//     src: url('../fonts/Futura_PT/FuturaPTBold.otf') format('otf'),
-//     url('../fonts/Futura_PT/FuturaPTBold.woff') format('woff');
-//     }
+@font-face {
+  font-family: "FuturaPTBold";
+  src: url("../public/fonts/Futura_PT/FuturaPTBold.otf") format("otf"),
+    url("../public/fonts/Futura_PT/FuturaPTBold.woff") format("woff");
+}
 
-// use in css styles:    font-family: FuturaPTBold;
+@font-face {
+  font-family: "FuturaPTMedium";
+  src: url("../public/fonts/Futura_PT/FuturaPTMedium.otf") format("otf"),
+    url("../public/fonts/Futura_PT/FuturaPTMedium.woff") format("woff");
+}
 
+@font-face {
+  font-family: "FuturaPTLight";
+  src: url("../public/fonts/Futura_PT/FuturaPTLight.otf") format("otf"),
+    url("../public/fonts/Futura_PT/FuturaPTLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaPTHeavy";
+  src: url("../public/fonts/Futura_PT/FuturaPTHeavy.otf") format("otf"),
+    url("../public/fonts/Futura_PT/FuturaPTHeavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaPTExtraBold";
+  src: url("../public/fonts/Futura_PT/FuturaPTExtraBold.otf") format("otf"),
+    url("../public/fonts/Futura_PT/FuturaPTExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaPTDemi";
+  src: url("../public/fonts/Futura_PT/FuturaPTDemi.otf") format("otf"),
+    url("../public/fonts/Futura_PT/FuturaPTDemi.woff") format("woff");
+}
 
 /* Text styles */
 
-// -- Example
-// @mixin menu_active_text {
-//   font-family: FuturaPTBold;
-//   font-size: 12px;
-//   color: $greyish_brown;
-// }
-//
-// use in css: 
-// .e-menuItem {
-//   @include menu_active_text;
-// 		margin: 6px 0 20px;
-// }
+@mixin menu_active_text {
+  font-family: FuturaPTBold;
+  font-size: 12px;
+  color: $greyish_brown;
+}
+
+@mixin menu_text {
+  font-family: FuturaPTBold;
+  font-size: 12px;
+  color: $brown_grey;
+}
+
+@mixin small_body_text {
+  font-family: FuturaPTBold;
+  font-size: 10px;
+  color: $brown_grey;
+}
+
+@mixin h1 {
+  font-family: FuturaPTBold;
+  font-size: 16px;
+  color: $greyish_brown;
+}
+
+@mixin h1_inactive {
+  font-family: FuturaPTBold;
+  font-size: 16px;
+  color: $brown_grey;
+}
+
+@mixin style-4_text {
+  font-family: FuturaPTMedium;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $greyish_brown;
+}
+
+@mixin component_labels {
+  font-family: FuturaPTBold;
+  font-size: 14px;
+  color: $greyish_brown;
+}
+
+@mixin large_body {
+  font-family: FuturaPTDemi;
+  font-size: 13px;
+  color: $greyish_brown;
+}
+
+@mixin body_text {
+  font-family: FuturaPTDemi;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $greyish_brown;
+}
+
+@mixin footnote {
+  font-family: FuturaPTMedium;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  color: $brown_grey;
+}
+
+@mixin small_label {
+  font-family: FuturaPTDemi;
+  font-size: 10px;
+  text-align: center;
+  color: $greyish_brown;
+}
+
+@mixin button_label {
+  font-family: FuturaPTBold;
+  font-size: 10px;
+  color: $greyish_brown;
+}
+
+@mixin small_sub-label {
+  font-family: FuturaPTDemi;
+  font-size: 10px;
+  text-align: center;
+  color: $brown_grey;
+}
+
+@mixin sum {
+  font-family: FuturaPT;
+  font-size: 22px;
+  font-weight: 500;
+  color: $brown_grey;
+}
