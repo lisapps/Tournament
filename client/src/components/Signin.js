@@ -4,7 +4,7 @@ import { AuthContext } from "../App";
 export const Signin = () => {
   const { dispatch } = React.useContext(AuthContext);
   const initialState = {
-    email: "",
+    emailId: "",
     password: "",
     isSubmitting: false,
     errorMessage: null
@@ -38,6 +38,7 @@ export const Signin = () => {
           console.log("inside react res.ok");
           return res.json();
         }
+        console.log("got throw res in react");
         throw res;
       })
       .then(resJson => {
@@ -47,6 +48,10 @@ export const Signin = () => {
         });
       })
       .catch(error => {
+        console.log("fetch error in react: ", error);
+        console.log("data: ", data);
+        console.log("error.message: ", error.message);
+        console.log("error.statusText: ", error.statusText);
         setData({
           ...data,
           isSubmitting: false,

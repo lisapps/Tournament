@@ -83,22 +83,38 @@ router.route("/signin").post((req, res) => {
   console.log("in signin route");
   console.log("email: ", email);
   console.log("pass: ", pass);
-  axios({
-    method: "post",
-    url: "https://avp-backend.com/api/backend/login.php",
-    form: {
+  // axios({
+  //   method: "post",
+  //   url: "https://avp-backend.com/api/backend/login.php",
+  //   formData: {
+  //     emailId: email,
+  //     password: pass
+  //   }
+  // })
+  axios
+    .post("https://avp-backend.com/api/backend/login.php", {
       emailId: email,
       password: pass
-    }
-  })
-    .then(function(response) {
-      console.log("in response");
-      console.log("response.status: ", response.status);
-      var data = JSON.parse(response);
-      res.send(data);
+    })
+    .then(res => {
+      console.log("res.status: ", res.status);
+      var rdata = res.data;
+      console.log("res data: ", rdata);
+      if (res.status == 200) {
+        // fix error message
+        if (res.data.status == "Fail") {
+          console.log("got status fail");
+          var errmsg = res.data.message;
+          console.log("errmsg: ", errmsg);
+          res.status(403).end(errmsg);
+        } else {
+          res.send(rdata);
+        }
+      }
     })
     .catch(function(error) {
-      console.log(error);
+      console.log("inside catch error: ", error);
+      res.send(error);
     });
 });
 module.exports = router;
