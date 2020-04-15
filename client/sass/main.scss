@@ -1,8 +1,8 @@
-@import 'imports/01_configs/config.breakpoints',
-'imports/01_configs/config.colors',
-'imports/01_configs/config.fonts',
-
-'imports/02_base/reset.normalize',
-'imports/02_base/base.buttons',
-'imports/02_base/base.content',
-'imports/02_base/base.layout'
+@import "imports/01_configs/config.breakpoints",
+  "imports/01_configs/config.colors", "imports/01_configs/config.fonts",
+  "imports/01_configs/config.transitions", "imports/02_base/reset.normalize",
+  "imports/02_base/base.buttons", "imports/02_base/base.content",
+  "imports/02_base/base.layout", "imports/04_elements/element.buttons",
+  "imports/04_elements/element.scrollbar",
+  "imports/04_elements/element.snackbar",
+  "imports/05_components/component.card.scss";

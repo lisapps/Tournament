@@ -59,10 +59,10 @@ function convertTime(time) {
   return sHours + ":" + sMins + " " + _meridiam;
 }
 
-testAPI.get("/", (req, res) => {
-  res.send({
-    text: "We are getting data from API with React asyc and hooks!"
-  });
-});
+// testAPI.get("/", (req, res) => {
+//   res.send({
+//     text: "We are getting data from API with React asyc and hooks!"
+//   });
+// });
 
 module.exports = router;
