@@ -1,5 +1,15 @@
 var express = require("express");
 var router = express.Router();
+const fs = require("fs");
+const crypto = require("crypto");
+const jwt = require("jsonwebtoken");
+const secret = process.env.SECRET_KEY;
+const algorithm = "aes-256-cbc";
+const key = "LM@098765_AVPAppLM@098765_AVPApp";
+const iv = "e95a3d73fe601926";
+const multer = require("multer");
+const upload = multer();
+const axios = require("axios");
 
 /*
     ### encryption function ###
@@ -65,4 +75,19 @@ function convertTime(time) {
 //   });
 // });
 
+router.route("/signin").post((req, res) => {
+  var email = req.body.emailId;
+  var pword = String(req.body.password);
+  var pass = encrypt(pword);
+
+  console.log("in signin route");
+  // axios({
+  //   method: "post",
+  //   url: "https://avp-backend.com/api/backend/login.php",
+  //   data: {
+  //     emailId: _email,
+  //     password: _pass
+  //   }
+  // });
+});
 module.exports = router;
