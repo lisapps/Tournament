@@ -76,18 +76,29 @@ function convertTime(time) {
 // });
 
 router.route("/signin").post((req, res) => {
-  var email = req.body.emailId;
+  var email = req.body.username;
   var pword = String(req.body.password);
   var pass = encrypt(pword);
 
   console.log("in signin route");
-  // axios({
-  //   method: "post",
-  //   url: "https://avp-backend.com/api/backend/login.php",
-  //   data: {
-  //     emailId: _email,
-  //     password: _pass
-  //   }
-  // });
+  console.log("email: ", email);
+  console.log("pass: ", pass);
+  axios({
+    method: "post",
+    url: "https://avp-backend.com/api/backend/login.php",
+    form: {
+      emailId: email,
+      password: pass
+    }
+  })
+    .then(function(response) {
+      console.log("in response");
+      console.log("response.status: ", response.status);
+      var data = JSON.parse(response);
+      res.send(data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 });
 module.exports = router;

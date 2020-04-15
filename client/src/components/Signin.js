@@ -29,12 +29,13 @@ export const Signin = () => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        username: data.email,
+        username: data.emailId,
         password: data.password
       })
     })
       .then(res => {
         if (res.ok) {
+          console.log("inside react res.ok");
           return res.json();
         }
         throw res;
