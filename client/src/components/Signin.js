@@ -1,5 +1,6 @@
 import React from "react";
 import { AuthContext } from "../App";
+import axios from "axios";
 
 export const Signin = () => {
   const { dispatch } = React.useContext(AuthContext);
@@ -23,8 +24,45 @@ export const Signin = () => {
       isSubmitting: true,
       errorMessage: null
     });
-    fetch("http://localhost:3002/signin", {
+    // fetch("http://localhost:3002/signin", {
+    //   method: "post",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     username: data.emailId,
+    //     password: data.password
+    //   })
+    // })
+    //   .then(res => {
+    //     // if (res.ok) {
+    //     //   console.log("inside react res.ok");
+    //     //   return res.json();
+    //     // }
+    //     // console.log("got throw res in react");
+    //     // throw res;
+    //     console.log("res: ", res);
+    //   })
+    //   .then(resJson => {
+    //     dispatch({
+    //       type: "LOGIN",
+    //       payload: resJson
+    //     });
+    //   })
+    //   .catch(error => {
+    //     console.log("fetch error in react: ", error);
+    //     // console.log("data: ", data);
+    //     console.log("error.message: ", error.message);
+    //     console.log("error.statusText: ", error.statusText);
+    //     setData({
+    //       ...data,
+    //       isSubmitting: false,
+    //       errorMessage: error.message || error.statusText
+    //     });
+    //   });
+    axios({
       method: "post",
+      url: "http://localhost:3002/signin",
       headers: {
         "Content-Type": "application/json"
       },
@@ -33,30 +71,11 @@ export const Signin = () => {
         password: data.password
       })
     })
-      .then(res => {
-        if (res.ok) {
-          console.log("inside react res.ok");
-          return res.json();
-        }
-        console.log("got throw res in react");
-        throw res;
+      .then(resp => {
+        console.log("resp: ", resp);
       })
-      .then(resJson => {
-        dispatch({
-          type: "LOGIN",
-          payload: resJson
-        });
-      })
-      .catch(error => {
-        console.log("fetch error in react: ", error);
-        console.log("data: ", data);
-        console.log("error.message: ", error.message);
-        console.log("error.statusText: ", error.statusText);
-        setData({
-          ...data,
-          isSubmitting: false,
-          errorMessage: error.message || error.statusText
-        });
+      .catch(err => {
+        console.log(err);
       });
   };
   return (
