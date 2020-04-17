@@ -60,19 +60,17 @@ export const Signin = () => {
     //       errorMessage: error.message || error.statusText
     //     });
     //   });
+
     axios({
       method: "post",
       url: "http://localhost:3002/signin",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
+      data: {
         username: data.emailId,
         password: data.password
-      })
+      }
     })
-      .then(resp => {
-        console.log("resp: ", resp);
+      .then(res => {
+        console.log("res: ", res);
       })
       .catch(err => {
         console.log(err);
