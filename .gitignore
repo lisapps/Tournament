@@ -1,0 +1,10 @@
+.cache/
+dist/
+.git
+.env
+.DS_Store
+.vscode/
+api/configs/
+api/node_modules
+api/logs/error.log
+client/node_modules
